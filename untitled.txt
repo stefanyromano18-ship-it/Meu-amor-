@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Feliz Aniversário Meu Amor ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffebee 0%, #fce4ec 100%);
+            min-height: 100vh;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 3px solid #f8bbd0;
+            position: relative;
+            z-index: 1;
+        }
+        .header {
+            margin-bottom: 25px;
+        }
+        h1 {
+            color: #e91e63;
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .heart-icon {
+            font-size: 40px;
+            color: #e91e63;
+            margin-bottom: 20px;
+            animation: pulse 1.5s infinite;
+        }
+        .heart-circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 5px solid #f8bbd0;
+            margin: 0 auto 25px;
+            background: linear-gradient(45deg, #ffcdd2, #f8bbd0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e91e63;
+            font-size: 80px;
+            animation: pulse 1.5s infinite;
+        }
+        .love-text {
+            background: linear-gradient(45deg, #fce4ec, #f8bbd0);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: left;
+            line-height: 1.6;
+            font-size: 16px;
+            color: #880e4f;
+            border-left: 5px solid #e91e63;
+        }
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            overflow: visible;
+        }
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            color: #e91e63;
+            animation: float 3s ease-in-out forwards;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px dashed #f8bbd0;
+        }
+        .footer p {
+            color: #e91e63;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        /* Responsivo para celular */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 15px;
+                margin: 10px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            .heart-circle {
+                width: 200px;
+                height: 200px;
+                font-size: 60px;
+            }
+            .love-text {
+                font-size: 15px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="hearts-container"></div>
+    <div class="container">
+        <div class="header">
+            <div class="heart-icon">❤️</div>
+            <h1>Feliz Aniversário, Meu Amor! 🎂</h1>
+        </div>
+        <div class="heart-circle">❤️</div>
+        <div class="love-text">
+            Feliz aniversário meu amor, eu desejo tudo de bom na sua vida, que seu dia seja incrível como você, você vai ver como você é especial para muita gente, principalmente pra mim, você é tudo pra mim, você é o homem da minha vida, e mesmo quando você estiver lá embaixo eu vou apoiar, te ajudar a levantar e sempre estar do seu lado, quando você estiver lá em cima pode ter certeza que foi com seu esforço e por causa do homem que você está se tornando, tenho muito orgulho de você, sempre pensando em mim, na sua família, em você principalmente, você é o homem dos meus sonhos e será meu sempre, eu te amo demais amor, eu te amei pelo seu jeito engraçadinho, seu jeito de me tratar, não foi pela aparência, nos meus olhos você é lindo de qualquer jeito, independente do que o futuro espera, pode ter certeza que eu vou estar do seu lado em todos os seus aniversários, mostrando que esse dia sempre vai ser importante na sua vida, porque mostra o quanto você já passou e está vivo, está aqui feliz e sendo o homem da minha vida, está comemorando mais um ano de vida do meu lado, só desejo tudo de bom pra você amor, obrigada por estar na minha vida, feliz aniversário meu gatinho 🥺🤍❤️‍🩹
+        </div>
+        <div class="footer">
+            <p>Te amo infinitamente! 💝</p>
+        </div>
+    </div>
+    <script>
+        // Criar corações flutuantes quando o usuário clicar na tela
+        document.body.addEventListener('click', function(e) {
+            createHeart(e.clientX, e.clientY);
+        });
+        function createHeart(x, y) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = (x - 12) + 'px';
+            heart.style.top = (y - 12) + 'px';
+            document.getElementById('hearts-container').appendChild(heart);
+            setTimeout(() => {
+                heart.remove();
+            }, 3000);
+        }
+        // Criar alguns corações iniciais
+        for (let i = 0; i < 10; i++) {
+            setTimeout(() => {
+                createHeart(
+                    Math.random() * window.innerWidth,
+                    Math.random() * window.innerHeight
+                );
+            }, i * 300);
+        }
+    </script>
+</body>
+</html>
